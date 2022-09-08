@@ -1,4 +1,4 @@
-package model;
+package service;
 
 import model.Menu;
 
@@ -23,8 +23,15 @@ public class OrderSystem {
     
     
 
-    public void addMenu(Integer number, Menu menuX) {
-        menus.put(number, menuX);
+    public void addMenu(Menu menuX) {
+        menus.put(menuX.getNumber(), menuX);
+    }
+
+    public Menu placeOrder(Integer number){
+        Menu foundMenu = menus.get(number);
+        System.out.println(foundMenu);
+
+        return foundMenu;
     }
 
 }
